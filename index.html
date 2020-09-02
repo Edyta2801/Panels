@@ -1,156 +1,406 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Flex Panels 💪</title>
-  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+  <title>Flex Hover Slider | Webdevtrick.com</title>
+  <link rel="stylesheet" href="style.css">
+ 
 </head>
 <body>
-  <style>
-    html {
-      box-sizing: border-box;
-      background: #ffc600;
-      font-family: 'helvetica neue';
-      font-size: 20px;
-      font-weight: 200;
-    }
-    
-    body {
-      margin: 0;
-    }
-    
-    *, *:before, *:after {
-      box-sizing: inherit;
-    }
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Raleway");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+ 
+.flex-container {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+ 
+.flex-title {
+  color: #f1f1f1;
+  position: relative;
+  font-size: 6vw;
+  margin: auto;
+  text-align: center;
+  transform: rotate(90deg);
+  top: 15%;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+@media screen and (max-width: 768px) {
+  .flex-title {
+    transform: rotate(0deg) !important;
+  }
+}
+ 
+.flex-about {
+  opacity: 0;
+  color: #f1f1f1;
+  position: relative;
+  width: 70%;
+  font-size: 2vw;
+  padding: 5%;
+  top: 20%;
+  border: 2px solid #f1f1f1;
+  border-radius: 10px;
+  line-height: 1.3;
+  margin: auto;
+  text-align: left;
+  transform: rotate(0deg);
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+@media screen and (max-width: 768px) {
+  .flex-about {
+    padding: 0%;
+    border: 0px solid #f1f1f1;
+  }
+}
+ 
+.flex-slide {
+  -webkit-flex: 1;
+  /* Safari 6.1+ */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  cursor: pointer;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+@media screen and (max-width: 768px) {
+  .flex-slide {
+    overflow: auto;
+    overflow-x: hidden;
+  }
+}
+ 
+@media screen and (max-width: 768px) {
+  .flex-slide p {
+    font-size: 2em;
+  }
+}
+ 
+@media screen and (max-width: 768px) {
+  .flex-slide ul li {
+    font-size: 2em;
+  }
+}
+ 
+.flex-slide:hover {
+  -webkit-flex-grow: 3;
+  flex-grow: 3;
+}
+ 
+.home {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?crop=entropy&cs=srgb&dl=nature-red-forest-leaves-33109.jpg&fit=crop&fm=jpg&h=853&w=1280);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+@media screen and (min-width: 768px) {
+  .home {
+    -moz-animation: aboutFlexSlide;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-delay: 0s;
+    -webkit-animation: aboutFlexSlide;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 0s;
+    animation: aboutFlexSlide;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+  }
+}
+ 
+@keyframes aboutFlexSlide {
+  0% {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+  }
+  50% {
+    -webkit-flex-grow: 3;
+    flex-grow: 3;
+  }
+  100% {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+  }
+}
+@media screen and (min-width: 768px) {
+  .flex-title-home {
+    transform: rotate(90deg);
+    top: 15%;
+    -moz-animation: homeFlextitle;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-delay: 0s;
+    -webkit-animation: homeFlextitle;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 0s;
+    animation: homeFlextitle;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+  }
+}
+ 
+@keyframes homeFlextitle {
+  0% {
+    transform: rotate(90deg);
+    top: 15%;
+  }
+  50% {
+    transform: rotate(0deg);
+    top: 15%;
+  }
+  100% {
+    transform: rotate(90deg);
+    top: 15%;
+  }
+}
+.flex-about-home {
+  opacity: 0;
+}
+@media screen and (min-width: 768px) {
+  .flex-about-home {
+    -moz-animation: flexAboutHome;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-delay: 0s;
+    -webkit-animation: flexAboutHome;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 0s;
+    animation: flexAboutHome;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+  }
+}
+ 
+@keyframes flexAboutHome {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.about {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/714258/pexels-photo-714258.jpeg?crop=entropy&cs=srgb&dl=mountain-ranges-covered-in-snow-714258.jpg&fit=crop&fm=jpg&h=853&w=1280);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+ 
+.contact-form {
+  width: 100%;
+}
+ 
+input {
+  width: 100%;
+}
+ 
+textarea {
+  width: 100%;
+}
+ 
+.contact {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/1295138/pexels-photo-1295138.jpeg?crop=entropy&cs=srgb&dl=ocean-water-wave-photo-1295138.jpg&fit=crop&fm=jpg&h=720&w=1280);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+.contact input[type="text"] {
+  border-radius: 10px;
+  height: 40px;
+}
+.contact textarea[type="text"] {
+  height: 40px;
+  border-radius: 10px;
+}
+.contact input[type="submit"] {
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: orangered;
+  color: white;
+  font-weight: 800;
+  text-align: center;
+  align-content: center;
+}
+.price {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/235807/pexels-photo-235807.jpeg?crop=entropy&cs=srgb&dl=abstract-active-ash-color-235807.jpg&fit=crop&fm=jpg&h=853&w=1280);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+ 
+.spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #222;
+  height: 100%;
+  width: 100%;
+  z-index: 11;
+  margin-top: 0;
+  color: #fff;
+  font-size: 1em;
+}
+ 
+.cube1, .cube2 {
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
+}
+ 
+.cube2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+ 
+@-webkit-keyframes sk-cubemove {
+  25% {
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  }
+  50% {
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  }
+  75% {
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+@keyframes sk-cubemove {
+  25% {
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  }
+  50% {
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  }
+  50.1% {
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  }
+  75% {
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
+}
+    </style>
+ 
+<div class="flex-container">
+	<div class="spinner"><p>
+		<div class="cube1"></div>
+		<div class="cube2"></div>
+	Loading...
+		</p>
+	</div>
+	<div class="flex-slide home">
+		<div class="flex-title flex-title-home">Home</div>
+		<div class="flex-about flex-about-home"><p>Click here to navigate to the home section of the website</p></div>
+	</div>
+	<div class="flex-slide about">
+		<div class="flex-title">About</div>
+		<div class="flex-about"><p>Click here to navigate to the About section of the website</p></div>
+	</div>
+	<div class="flex-slide price">
+		<div class="flex-title">Price</div>
+		<div class="flex-about"><p>Listing relevant snippets of price:</p>
+		<ul>
+		<li>First piece of price</li>
+		<li>Second piece of price</li>
+		<li>Third piece of price</li>
+		</ul>
+		</div>
+	</div>
+	<div class="flex-slide contact">
+		<div class="flex-title">Contact</div>
+		<div class="flex-about">
+		<p>Use the contact form below</p>
+		<form class="contact-form">
+		<p>Email <input type="text" name="email"></p>
+		<p>Comment <textarea type="text" name="comment"></textarea></p>
+		<p><input type="submit" name="email" value="Send Message"></p>
+		</form>
+ 
+		</div>
+	</div>
+</div>
+ 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/2.4.0/jquery.waitforimages.min.js'></script>
+<script>
+(function(){
+	$('.flex-container').waitForImages(function() {
+		$('.spinner').fadeOut();
+	}, $.noop, true);
+	
+	$(".flex-slide").each(function(){
+		$(this).hover(function(){
+		$(this).find('.flex-title').css({
+		transform: 'rotate(0deg)',
+		top: '10%'
+		});
+		$(this).find('.flex-about').css({
+		opacity: '1'
+		});
+		}, function(){
+		$(this).find('.flex-title').css({
+		transform: 'rotate(90deg)',
+		top: '15%'
+		});
+		$(this).find('.flex-about').css({
+		opacity: '0'
+		});
+		})
+	});
+})();
 
-    .panels {
-      min-height: 100vh;
-      overflow: hidden;
-      display: flex;
-    }
-
-    .panel {
-      background: #6B0F9C;
-      box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
-      color: white;
-      text-align: center;
-      align-items: center;
-      /* Safari transitionend event.propertyName === flex */
-      /* Chrome + FF transitionend event.propertyName === flex-grow */
-      transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
-          flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.2s;
-      font-size: 20px;
-      background-size: cover;
-      background-position: center;
-      flex: 1;
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
-    .panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
-    .panel3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
-    .panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
-    .panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
-    .panel6 {background-image:url(https://images.unsplash.com/photo-1455044372794-d981761b5bc6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80/1500x1500);}
-
-    /* Flex Items */
-    .panel > * {
-      margin: 0;
-      width: 100%;
-      transition: transform 0.5s;
-      flex: 1 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .panel > *:first-child { transform: translateY(-100%); }
-    .panel.open-active > *:first-child { transform: translateY(0); }
-    .panel > *:last-child { transform: translateY(100%); }
-    .panel.open-active > *:last-child { transform: translateY(0); }
-
-    .panel p {
-      text-transform: uppercase;
-      font-family: 'Amatic SC', cursive;
-      text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-      font-size: 2em;
-    }
-    
-    .panel p:nth-child(2) {
-      font-size: 4em;
-    }
-
-    .panel.open {
-      flex: 5;
-      font-size: 40px;
-    }
-    
-    @media only screen and (max-width: 600px) {
-      .panel p {
-        font-size: 1em;
-      }
-    }
-  </style>
-
-
-  <div class="panels">
-    <div class="panel panel1">
-      <p>Hey</p>
-      <p>Let's</p>
-      <p>Dance</p>
-    </div>
-    <div class="panel panel2">
-      <p>Give</p>
-      <p>Take</p>
-      <p>Receive</p>
-    </div>
-    <div class="panel panel3">
-      <p>Experience</p>
-      <p>It</p>
-      <p>Today</p>
-    </div>
-    <div class="panel panel4">
-      <p>Give</p>
-      <p>All</p>
-      <p>You can</p>
-    </div>
-    <div class="panel panel5">
-      <p>Life</p>
-      <p>In</p>
-      <p>Motion</p>
-    </div>
-    <div class="panel panel6">
-        <p>Take</p>
-        <p>what</p>
-        <p>you want</p>
-      </div>
-  </div>
-
-  <script>
-    const panels = document.querySelectorAll('.panel');
-
-    function toggleOpen() {
-      console.log('open panel');
-      this.classList.toggle('open');
-    }
-
-    function toggleActive(e) {
-      console.log(e.propertyName);
-      if (e.propertyName.includes('flex')) {
-        this.classList.toggle('open-active');
-      }
-    }
-
-    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
-    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
-
-  </script>
-
+</script>
+ 
 </body>
 </html>
-
-<!-- https://codepen.io/jeffglenn/pen/KNYoKa/ -->
-<!-- https://codepen.io/codebubb/pen/BqzwzM -->
-<!-- https://webdevtrick.com/demos/hover-panel-slider -->
