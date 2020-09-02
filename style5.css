@@ -153,8 +153,6 @@ element.style {
     }
 }
 
-
-
 @media (min-width: 782px) {
     .wp-block-columns {
         flex-wrap: nowrap;
@@ -172,8 +170,6 @@ element.style {
     flex-grow: 1;
 }
 
-
-
 element.style {
     background-image: url(http://biznes.cumulus.atthouse.pl/wp-content/uploads/2020/09/foto_gospodarkam.jpg);
 }
@@ -190,7 +186,6 @@ element.style {
     align-items: center;
     padding: 16px;
 }
-
 
 p {
     display: block;
@@ -239,20 +234,21 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 .has-text-align-center.has-large-font-size {
     transform: rotate(90deg);
-    bottom: 10%;
+    top: 50%;
 }
 
 .wp-block-columns.wp-block-column:hover.has-text-align-center.has-large-font-size {
     transform: rotate(00deg);
-    bottom: 10%;
-    text-align:center;
+    top: 50%;
+    text-align: center;
 }
 
 /* .wp-block-columns.wp-block-column{
     background-color: rgba(0, 0, 0, 0.7);
     transition: background-color .8s ease;
 } */
+
 .wp-block-cover, .wp-block-cover-image {
-    justify-content: left;
-    align-items: inherit;
+    justify-content: start;
+    align-items: flex-start;
 }
