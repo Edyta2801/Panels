@@ -68,8 +68,8 @@ body, button, input, select, textarea {
 .wp-block-column {
     flex-grow: 1;
     min-width: 0;
-    word-break: break-word;
-    overflow-wrap: break-word;
+    /* word-break: break-word;
+    overflow-wrap: break-word; */
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
@@ -153,12 +153,7 @@ element.style {
     }
 }
 
-.wp-block-column {
-    flex-grow: 1;
-    min-width: 0;
-    word-break: break-word;
-    overflow-wrap: break-word;
-}
+
 
 @media (min-width: 782px) {
     .wp-block-columns {
@@ -179,13 +174,6 @@ element.style {
 
 
 
-.wp-block-column {
-    flex-grow: 1;
-    min-width: 0;
-    word-break: break-word;
-    overflow-wrap: break-word;
-}
-
 element.style {
     background-image: url(http://biznes.cumulus.atthouse.pl/wp-content/uploads/2020/09/foto_gospodarkam.jpg);
 }
@@ -203,12 +191,6 @@ element.style {
     padding: 16px;
 }
 
-.wp-block-column {
-    flex-grow: 1;
-    min-width: 0;
-    word-break: break-word;
-    overflow-wrap: break-word;
-}
 
 p {
     display: block;
@@ -225,9 +207,9 @@ p {
     min-height: inherit;
 }
 
-.has-text-align-center {
+/* .has-text-align-center {
     text-align: center;
-}
+} */
 
 .editor-styles-wrapper .has-large-font-size, .has-large-font-size {
     font-size: 36px;
@@ -242,8 +224,35 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     margin: 0;
     padding: 0;
 }
+
 .wp-block-cover-image .wp-block-cover__inner-container, .wp-block-cover .wp-block-cover__inner-container {
     width: calc(100% - 70px);
     z-index: 1;
     color: #fff;
+}
+
+.wp-block-columns .wp-block-column :hover {
+    flex: 6;
+    transition: flex 3s ease;
+    opacity: 0.7;
+}
+
+.has-text-align-center.has-large-font-size {
+    transform: rotate(90deg);
+    bottom: 10%;
+}
+
+.wp-block-columns.wp-block-column:hover.has-text-align-center.has-large-font-size {
+    transform: rotate(00deg);
+    bottom: 10%;
+    text-align:center;
+}
+
+/* .wp-block-columns.wp-block-column{
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: background-color .8s ease;
+} */
+.wp-block-cover, .wp-block-cover-image {
+    justify-content: left;
+    align-items: inherit;
 }
